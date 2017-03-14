@@ -10,13 +10,13 @@ class GuestsController < ApplicationController
   end
 
   post '/guests' do
-    # binding.pry
     @guest = Guest.create(first_name: params[:guest][:first_name], last_name: params[:guest][:last_name], occupation: params[:guest][:occupation], episode_ids: params[:guest][:episode_ids])
     redirect '/guests'
   end
 
   get '/guests/:id' do
     @guest = Guest.find_by_id(params[:id])
+    @appearance = Appearance.find_by_id(params[:id])
     erb :'/guests/show'
   end
 

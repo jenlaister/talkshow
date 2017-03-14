@@ -5,11 +5,15 @@
     <title>The Daily Show Guests!</title>
   </head>
   <body>
-    <h1>The Daily Show Guests:</h1>
-    <ul>
+    <table>
+      <tr>
+        <th><h1>The Daily Show Guests</h1></th>
+      </tr>
       <% @guests.each do |guest| %>
-      <li><h3><%= guest.full_name %></h3></li>
-    </ul>
-    <% end %>
+      <tr>
+        <td><h3><%= guest.full_name %></h3><a href="/guests/<%= guest.id %>">See More Details</a></td>
+      </tr>
+        <% end %>
+      <table>
   </body>
 </html>

@@ -5,6 +5,15 @@
     <title>Guest</title>
   </head>
   <body>
-    <h3><%= @guest.full_name %>: <%= @guest.occupation %></h3>
+    <h2>Guest: <%= @guest.full_name %></h2>
+    <h3>Occupation: <%= @guest.occupation %></h3>
+    <h3>Episodes:</h3>
+    <% Appearance.all.each do |appearance| %>
+    <% if appearance.guest_id == @guest.id %>
+    <ul>
+      <li><p><%= appearance.episode.title %></p></li>
+    </ul>
+    <% end %>
+    <% end %>
   </body>
 </html>
