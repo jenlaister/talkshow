@@ -18,8 +18,11 @@ class EpisodesController < ApplicationController
 
   get '/episodes/:id' do
     @episode = Episode.find_by_id(params[:id])
+    @appearance = Appearance.find_by_id(params[:id])
+    # binding.pry
     erb :'/episodes/show'
   end
+
 
 
   get '/episodes/:id/edit' do

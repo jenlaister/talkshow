@@ -1,8 +1,8 @@
 ian = Guest.create(first_name: "Ian", last_name: "Candy", occupation: "Instructor")
 
-jenny = Guest.create(first_name: "Jenny", last_name: "Lai", occupation: "Unemployed")
+jenny = Guest.create(first_name: "Jenny", last_name: "Lai", occupation: "Unemployed - Hire Me!")
 
-jon = Guest.create(first_name: "Jon", last_name: "Stewart", occupation: "Former tv host")
+jon = Guest.create(first_name: "Jon", last_name: "Stewart", occupation: "Former TV Host")
 
 thedan = Episode.create(title: "My Love for Dan Abramov", date: "3/12/17")
 

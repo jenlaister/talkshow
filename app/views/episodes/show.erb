@@ -6,6 +6,18 @@
   </head>
   <body>
     <h1>Episode: <%= @episode.title %></h1>
-    <h3>Date: <%= @episode.date %></h3>
+    <p>Date: <%= @episode.date %></p>
+    <% Appearance.all.each do |appearance| %>
+    <% if appearance.episode_id == @episode.id %>
+    <h3>Guest: <%= appearance.guest.full_name %></h3>
+    <% else %>
+    <%= "" %>
+    <% end %>
+    <% end %>
+    <% Guest.all.each do |guest| %>
+    <% if guest.id == @appearance.guest_id %>
+    <a href="/guests/<%= guest.id %>">See Details about Guest</a>
+    <% end %>
+    <% end %>
   </body>
 </html>
