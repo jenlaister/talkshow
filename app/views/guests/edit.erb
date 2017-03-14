@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit A Guest!</title>
+  </head>
+  <body>
+    <form action="/guests/<%= @guest.id %>" method="post">
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <label for="name">Name:</label>
+        <input id="name" type="text" name="guest[full_name]" value="<%= @guest.full_name %>"><br>
+      <label for="name">Occupation</label>
+        <input id="occupation" type="text" name="guest[occupation]" value="<%= @guest.occupation %>"><br>
+        <input type="submit" value="Save">
+    </form>
+  </body>
+</html>

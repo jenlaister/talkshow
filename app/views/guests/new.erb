@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create a New Guest!</title>
+  </head>
+  <body>
+    <form action="/guests" method="post">
+      <label>Guest:</label><br>
+        <label>First Name:</label><input id="first_name" type="text" name="guest[first_name]"><br>
+        <label>Last Name:</label><input id="last_name" type="text" name="guest[last_name]"><br>
+      <label>Occupation:</label>
+        <input id="occupation" type="text" name="guest[occupation]"><br>
+        <label>Episodes:</label><br>
+        <% Episode.all.each do |episode| %>
+        <input id="episode_<%= episode.id %>" type="radio" name="guest[episode_ids][]" value="<%= episode.id %>"><%= episode.title %></input><br>
+        <% end %>
+        <input type="submit" value="submit">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Daily Show</title>
+  </head>
+  <body>
+    <h1>The Daily Show!</h1>
+    <h2>Episodes:</h2>
+    <% @episodes.each do |episode| %>
+    <ul>
+      <li><h3><%= episode.title %></h3></li>
+      <a href="/episodes/<%= episode.id %>">See Episode...</a>
+    </ul>
+    <% end %>
+  </body>
+</html>

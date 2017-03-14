@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit A Episode!</title>
+  </head>
+  <body>
+    <h1>Edit A Episode:</h1>
+    <form action="/episodes/<%= @episode.id %>" method="post">
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <label for="title">Episode Title:</label>
+        <input id="title" type="text" name="episode[title]" value="<%= @episode.title %>"><br>
+      <label for="date">Date:</label>
+        <input id="date" type="text" name="episode[date]" value="<%= @episode.date %>"><br>
+        <input type="submit" value="Save">
+    </form>
+  </body>
+</html>

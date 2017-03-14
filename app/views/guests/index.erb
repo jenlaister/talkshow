@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Daily Show Guests!</title>
+  </head>
+  <body>
+    <h1>The Daily Show Guests:</h1>
+    <ul>
+      <% @guests.each do |guest| %>
+      <li><h3><%= guest.full_name %></h3></li>
+    </ul>
+    <% end %>
+  </body>
+</html>
